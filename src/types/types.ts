@@ -1,7 +1,6 @@
 import { LucideIcon } from "lucide-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import {
-  FormHTMLAttributes,
   HTMLAttributes,
   InputHTMLAttributes,
   TextareaHTMLAttributes,
@@ -14,27 +13,6 @@ export interface ContactUsData {
   email_address: string;
   omnix_service: string;
   message_text: string;
-}
-
-export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  error?: boolean;
-  errorMsg?: string | undefined;
-  label: string;
-  htmlFor: string;
-  children?: React.ReactNode;
-}
-
-export interface FormFieldProps extends FormHTMLAttributes<HTMLFormElement> {
-  OnSubmit?: () => void;
-  children: React.ReactNode;
-}
-
-export interface TextareaFieldProps
-  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  label: string;
-  htmlFor: string;
-  error?: boolean;
-  errorMsg?: string | undefined;
 }
 
 export interface PricingIconProps {
@@ -91,4 +69,17 @@ export interface TestimonialCardProps {
   company: string;
   rating: number;
   testimonial: string;
+}
+
+export interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
+  label: string | undefined;
+  htmlFor: string | undefined;
+  className: string | undefined;
+}
+
+export interface TextareaGroupProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label: string | undefined;
+  htmlFor: string | undefined;
+  className: string | undefined;
 }

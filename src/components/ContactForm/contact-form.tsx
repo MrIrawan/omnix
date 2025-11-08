@@ -1,6 +1,8 @@
 "use client";
 
-import { Input } from "../ui/input";
+import { InputGroup } from "../InputGroup/input-group";
+import { TextareaGroup } from "../TextareaGroup/textarea-group";
+
 import { Label } from "../ui/label";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
@@ -11,7 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { Textarea } from "../ui/textarea";
 import { SendHorizonal } from "lucide-react";
 
 export function ContactForm() {
@@ -21,61 +22,34 @@ export function ContactForm() {
         <form className="w-full flex flex-col gap-4" method="post">
           <div className="flex flex-col gap-1">
             <div className="flex flex-row items-center gap-3">
-              <div className="w-full flex flex-col gap-1">
-                <Label htmlFor="full_name" className="font-semibold text-sm">
-                  Full name
-                </Label>
-                <Input
-                  type="text"
-                  id="full_name"
-                  name="full_name"
-                  className="placeholder:text-muted-foreground placeholder:font-medium placeholder:text-sm"
-                  placeholder="Enter your full name"
-                />
-              </div>
-              <div className="w-full flex flex-col gap-1">
-                <Label htmlFor="full_name" className="font-semibold text-sm">
-                  Full name
-                </Label>
-                <Input
-                  type="text"
-                  id="email_address"
-                  name="email_address"
-                  className="placeholder:text-muted-foreground placeholder:font-medium placeholder:text-sm"
-                  placeholder="Enter your email address"
-                />
-              </div>
+              <InputGroup
+                label="Full name"
+                htmlFor="full_name"
+                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+                placeholder="ex: Jhon Doe"
+              />
+              <InputGroup
+                label="Email address"
+                htmlFor="email_address"
+                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+                placeholder="ex: jhondoe@email.com"
+              />
             </div>
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex flex-row items-center gap-3">
-              <div className="w-full flex flex-col gap-1">
-                <Label
-                  htmlFor="company_or_organization"
-                  className="font-semibold text-sm"
-                >
-                  Company or Organization
-                </Label>
-                <Input
-                  type="text"
-                  id="company_or_organization"
-                  name="company_or_organization"
-                  className="placeholder:text-muted-foreground placeholder:font-medium placeholder:text-sm"
-                  placeholder="company or organization name"
-                />
-              </div>
-              <div className="w-full flex flex-col gap-1">
-                <Label htmlFor="phone_number" className="font-semibold text-sm">
-                  Phone number
-                </Label>
-                <Input
-                  type="text"
-                  id="phone_number"
-                  name="phone_number"
-                  className="placeholder:text-muted-foreground placeholder:font-medium placeholder:text-sm"
-                  placeholder="Enter your phone number"
-                />
-              </div>
+              <InputGroup
+                label="Company or Organization"
+                htmlFor="company_or_organization"
+                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+                placeholder="PT. Omnix Indonesia"
+              />
+              <InputGroup
+                label="Phone number"
+                htmlFor="phone_number"
+                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+                placeholder="ex: +62 8123456789"
+              />
             </div>
           </div>
           <div className="w-full flex flex-col gap-1">
@@ -93,15 +67,14 @@ export function ContactForm() {
               </SelectContent>
             </Select>
           </div>
-          <div className="flex flex-col gap-1">
-            <Label htmlFor="message_text" className="text-sm font-semibold">
-              Tell us about your business inquiries
-            </Label>
-            <Textarea className="text-base font-normal text-black min-h-[200px] resize-none" />
-          </div>
+          <TextareaGroup
+            label="Tell us about your business inquiries"
+            htmlFor="message_text"
+            className="text-base font-normal text-black min-h-[200px] resize-none"
+          />
           <div className="flex flex-row items-center">
             <Button
-              className="w-full bg-indigo-600 group transition-all duration-300 ease-in-out hover:bg-indigo-800 py-5"
+              className="w-full bg-indigo-600 group transition-all duration-300 ease-in-out hover:bg-indigo-800 py-5 h-12"
               size={"icon-lg"}
             >
               <span className="flex flex-row items-center gap-1">
