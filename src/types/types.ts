@@ -75,6 +75,7 @@ export interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string | undefined;
   htmlFor: string | undefined;
   className: string | undefined;
+  errorMsg: string | React.ReactElement | undefined;
 }
 
 export interface TextareaGroupProps

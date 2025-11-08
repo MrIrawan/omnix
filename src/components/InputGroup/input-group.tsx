@@ -8,6 +8,7 @@ export function InputGroup({
   label,
   htmlFor,
   className,
+  errorMsg,
   ...props
 }: InputGroupProps) {
   return (
@@ -27,6 +28,9 @@ export function InputGroup({
         name={htmlFor}
         {...props}
       />
+      {errorMsg && (
+        <p className="text-sm font-medium text-destructive">{errorMsg}</p>
+      )}
     </div>
   );
 }

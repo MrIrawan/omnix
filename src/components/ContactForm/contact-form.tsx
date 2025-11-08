@@ -27,12 +27,14 @@ export function ContactForm() {
               htmlFor="full_name"
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="ex: Jhon Doe"
+              errorMsg={undefined}
             />
             <InputGroup
               label="Email address"
               htmlFor="email_address"
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="ex: jhondoe@email.com"
+              errorMsg={undefined}
             />
           </HorizontalInputWrapper>
           <HorizontalInputWrapper>
@@ -41,12 +43,14 @@ export function ContactForm() {
               htmlFor="company_or_organization"
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="PT. Omnix Indonesia"
+              errorMsg={undefined}
             />
             <InputGroup
               label="Phone number"
               htmlFor="phone_number"
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="ex: +62 8123456789"
+              errorMsg={undefined}
             />
           </HorizontalInputWrapper>
           <div className="w-full flex flex-col gap-1">
