@@ -18,7 +18,15 @@ export function InputGroup({
       >
         {label === undefined ? "Label" : label}
       </Label>
-      <Input className={cn(className)} id={htmlFor} name={htmlFor} {...props} />
+      <Input
+        className={cn(
+          "focus-visible:border-indigo-600 focus-visible:ring-indigo-100 focus-visible:ring-[3px] rounded-sm",
+          className
+        )}
+        id={htmlFor}
+        name={htmlFor}
+        {...props}
+      />
     </div>
   );
 }
