@@ -8,12 +8,12 @@ import {
 } from "react";
 
 export interface ContactUsData {
-  name: string;
-  company_name: string;
+  full_name: string;
+  company_or_organization: string;
   phone_number: string;
-  email: string;
-  subject_mesage?: string;
-  message: string;
+  email_address: string;
+  omnix_service: string;
+  message_text: string;
 }
 
 export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {

@@ -1,5 +1,6 @@
 "use client";
 
+import { ContactForm } from "@/components/ContactForm/contact-form";
 import {
   Card,
   CardHeader,
@@ -69,14 +70,7 @@ export default function ContactUsPage() {
         </CardContent>
       </Card>
       {/* contact form component */}
-      <Card className="w-full">
-        <CardContent>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sequi
-          voluptatum, cupiditate aut tempore cumque eius temporibus nemo.
-          Molestiae, esse?
-        </CardContent>
-        <Input className="ring ring-border" />
-      </Card>
+      <ContactForm />
     </>
   );
 }
