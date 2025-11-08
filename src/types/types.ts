@@ -83,3 +83,8 @@ export interface TextareaGroupProps
   htmlFor: string | undefined;
   className: string | undefined;
 }
+
+export interface HorizontalInputWrapperProps {
+  children: React.ReactNode;
+  errorMsg: string | React.ReactElement;
+}

@@ -2,6 +2,7 @@
 
 import { InputGroup } from "../InputGroup/input-group";
 import { TextareaGroup } from "../TextareaGroup/textarea-group";
+import { HorizontalInputWrapper } from "../HorizontalInputWrapper/horizontal-input-wrapper";
 
 import { Label } from "../ui/label";
 import { Card, CardContent } from "../ui/card";
@@ -20,38 +21,34 @@ export function ContactForm() {
     <Card className="w-full bg-white rounded-md shadow-none border-none">
       <CardContent className="gap-6">
         <form className="w-full flex flex-col gap-4" method="post">
-          <div className="flex flex-col gap-1">
-            <div className="flex flex-row items-center gap-3">
-              <InputGroup
-                label="Full name"
-                htmlFor="full_name"
-                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
-                placeholder="ex: Jhon Doe"
-              />
-              <InputGroup
-                label="Email address"
-                htmlFor="email_address"
-                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
-                placeholder="ex: jhondoe@email.com"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-1">
-            <div className="flex flex-row items-center gap-3">
-              <InputGroup
-                label="Company or Organization"
-                htmlFor="company_or_organization"
-                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
-                placeholder="PT. Omnix Indonesia"
-              />
-              <InputGroup
-                label="Phone number"
-                htmlFor="phone_number"
-                className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
-                placeholder="ex: +62 8123456789"
-              />
-            </div>
-          </div>
+          <HorizontalInputWrapper errorMsg={"bla bla bla"}>
+            <InputGroup
+              label="Full name"
+              htmlFor="full_name"
+              className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+              placeholder="ex: Jhon Doe"
+            />
+            <InputGroup
+              label="Email address"
+              htmlFor="email_address"
+              className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+              placeholder="ex: jhondoe@email.com"
+            />
+          </HorizontalInputWrapper>
+          <HorizontalInputWrapper errorMsg={"bla bla bla"}>
+            <InputGroup
+              label="Company or Organization"
+              htmlFor="company_or_organization"
+              className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+              placeholder="PT. Omnix Indonesia"
+            />
+            <InputGroup
+              label="Phone number"
+              htmlFor="phone_number"
+              className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
+              placeholder="ex: +62 8123456789"
+            />
+          </HorizontalInputWrapper>
           <div className="w-full flex flex-col gap-1">
             <Label htmlFor="omnix_service" className="text-sm font-semibold">
               Choose omnix service
