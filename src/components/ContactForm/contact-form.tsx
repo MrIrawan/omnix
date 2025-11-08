@@ -21,7 +21,7 @@ export function ContactForm() {
     <Card className="w-full bg-white rounded-md shadow-none border-none">
       <CardContent className="gap-6">
         <form className="w-full flex flex-col gap-4" method="post">
-          <HorizontalInputWrapper errorMsg={"bla bla bla"}>
+          <HorizontalInputWrapper>
             <InputGroup
               label="Full name"
               htmlFor="full_name"
@@ -35,7 +35,7 @@ export function ContactForm() {
               placeholder="ex: jhondoe@email.com"
             />
           </HorizontalInputWrapper>
-          <HorizontalInputWrapper errorMsg={"bla bla bla"}>
+          <HorizontalInputWrapper>
             <InputGroup
               label="Company or Organization"
               htmlFor="company_or_organization"
