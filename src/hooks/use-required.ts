@@ -1,7 +1,7 @@
 /** useRequired custom hook by Farrel Irawan
  *
- *  this hook will check if the input or textarea element is required or not
- *  and return a boolean value
+ * this hook will check if the input or textarea element is required or not
+ * and return a boolean value
  *
  * Usage:
  * to use this hook, you need to pass a ref of the input or textarea element
