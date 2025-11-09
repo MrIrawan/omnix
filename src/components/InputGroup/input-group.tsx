@@ -1,3 +1,8 @@
+"use client";
+
+import { useRef } from "react";
+import { useRequired } from "@/hooks/use-required";
+
 import { cn } from "@/lib/utils";
 
 import { Label } from "../ui/label";
@@ -11,13 +16,17 @@ export function InputGroup({
   errorMsg,
   ...props
 }: InputGroupProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { isRequired } = useRequired(inputRef);
+
   return (
     <div className="w-full flex flex-col gap-1">
       <Label
-        className="text-sm font-semibold text-black"
+        className="text-sm font-semibold text-black gap-0.5"
         htmlFor={htmlFor === undefined ? "input-group" : htmlFor}
       >
         {label === undefined ? "Label" : label}
+        {isRequired && <span className="text-destructive">*</span>}
       </Label>
       <Input
         className={cn(
@@ -26,6 +35,7 @@ export function InputGroup({
         )}
         id={htmlFor}
         name={htmlFor}
+        ref={inputRef}
         {...props}
       />
       {errorMsg && (

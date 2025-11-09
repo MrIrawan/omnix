@@ -28,6 +28,7 @@ export function ContactForm() {
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="ex: Jhon Doe"
               errorMsg={undefined}
+              required
             />
             <InputGroup
               label="Email address"
@@ -35,6 +36,7 @@ export function ContactForm() {
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="ex: jhondoe@email.com"
               errorMsg={undefined}
+              required
             />
           </HorizontalInputWrapper>
           <HorizontalInputWrapper>
@@ -44,6 +46,7 @@ export function ContactForm() {
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="PT. Omnix Indonesia"
               errorMsg={undefined}
+              required
             />
             <InputGroup
               label="Phone number"
@@ -51,6 +54,7 @@ export function ContactForm() {
               className="placeholder:text-black/50 placeholder:text-sm placeholder:font-medium"
               placeholder="ex: +62 8123456789"
               errorMsg={undefined}
+              required
             />
           </HorizontalInputWrapper>
           <div className="w-full flex flex-col gap-1">
@@ -72,6 +76,7 @@ export function ContactForm() {
             label="Tell us about your business inquiries"
             htmlFor="message_text"
             className="text-base font-normal text-black min-h-[200px] resize-none"
+            required
           />
           <div className="flex flex-row items-center">
             <Button
