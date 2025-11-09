@@ -1,3 +1,4 @@
+import * as SelectPrim from "@radix-ui/react-select";
 import { LucideIcon } from "lucide-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import {
@@ -83,4 +84,16 @@ export interface TextareaGroupProps
   label: string | undefined;
   htmlFor: string | undefined;
   className: string | undefined;
+}
+
+export interface SelectGroupProp
+  extends React.ComponentProps<typeof SelectPrim.Root> {
+  label: string;
+  htmlFor: string;
+  className?: string;
+  options: {
+    value: string;
+    label: string;
+  }[];
+  placeholder?: string;
 }

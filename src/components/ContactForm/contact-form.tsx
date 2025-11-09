@@ -4,18 +4,12 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 import { InputGroup } from "../InputGroup/input-group";
 import { TextareaGroup } from "../TextareaGroup/textarea-group";
+import { SelectGroup } from "../SelectGroup/select-group";
 import { HorizontalInputWrapper } from "../HorizontalInputWrapper/horizontal-input-wrapper";
 
-import { Label } from "../ui/label";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+
 import { SendHorizonal } from "lucide-react";
 import { ContactUsData } from "@/types/types";
 
@@ -35,7 +29,6 @@ export function ContactForm() {
       <CardContent className="gap-6">
         <form
           className="w-full flex flex-col gap-4"
-          method="post"
           onSubmit={handleSubmit(onSubmit)}
         >
           <HorizontalInputWrapper>
@@ -107,21 +100,20 @@ export function ContactForm() {
               })}
             />
           </HorizontalInputWrapper>
-          <div className="w-full flex flex-col gap-1">
-            <Label htmlFor="omnix_service" className="text-sm font-semibold">
-              Choose omnix service
-            </Label>
-            <Select {...register("omnix_service")}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a service..." />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="service_1">Service 1</SelectItem>
-                <SelectItem value="service_2">Service 2</SelectItem>
-                <SelectItem value="service_3">Service 3</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+          <SelectGroup
+            label="Choose omnix service"
+            htmlFor="omnix_service"
+            placeholder="Select a service..."
+            options={[
+              { label: "Service A", value: "service_a" },
+              { label: "Service B", value: "service_b" },
+              { label: "Service C", value: "service_c" },
+            ]}
+            className="focus-visible:border-indigo-600 focus-visible:ring-indigo-100 focus-visible:ring-[3px]"
+            {...register("omnix_service", {
+              required: "Omnix service is required",
+            })}
+          />
           <TextareaGroup
             label="Tell us about your business inquiries"
             htmlFor="message_text"
